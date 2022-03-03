@@ -11,6 +11,7 @@ namespace AutorizationE1Page_Tests
         private readonly By _otherWayToEnter = By.XPath("//span[text()='Другим способом']");
         private readonly By _loginInputText = By.XPath("//input[@name='username']");
         private readonly By _continueButton = By.XPath("//button[@data-name='ContinueAuthBtn']");
+        private readonly By _labelForCheckBoxesToContinue = By.XPath("//label[@class='_25d45facb5--checkbox--Y2Njc _25d45facb5--checkbox--Iw_6q _25d45facb5--container--QqIhH']");
 
         private const string _login = "andrey872007@mail.ru";
         private const string _password = "";
@@ -42,10 +43,12 @@ namespace AutorizationE1Page_Tests
             LoginInput.SendKeys(_login);
             System.Threading.Thread.Sleep(200);
 
-            var buttonContinueAuth=driver.FindElement(_continueButton); 
+            var buttonContinueAuth = driver.FindElement(_continueButton);
             buttonContinueAuth.Click();
             System.Threading.Thread.Sleep(200);
 
+            var _checkBox_IAgree = driver.FindElement(_labelForCheckBoxesToContinue);
+            _checkBox_IAgree.Click();
 
             //address address address
             //address address address
